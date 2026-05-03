@@ -1,0 +1,101 @@
+\ProvidesPackage{preamble}
+
+\usepackage{comment} % Allow for commenting out blocks of code
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.0in]{geometry} % Set page margins
+\usepackage[flushleft]{threeparttable}
+\usepackage{makecell}
+\usepackage[hang,flushmargin]{footmisc} % Format footnotes
+\usepackage{longtable} % Allow "longtable" format, which lets long tables span multiple pages automatically
+\usepackage{booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{rotating}
+\usepackage{dcolumn} 
+\usepackage{mathptmx}
+\usepackage{amsmath}
+\usepackage[capposition=top]{floatrow} % Helps center tables somehow
+\usepackage[colorlinks,allcolors=blue]{hyperref} % Create internal links
+\usepackage{pdflscape} % Allow some pages to be landscape
+\usepackage{setspace} % Allow for double spacing 
+\usepackage[justification=centering,large]{caption}
+\usepackage{indentfirst}\setlength\parindent{1cm} %indent first paragraph of sections
+\usepackage{datetime}
+\usepackage{times}  % font: Times New Roman
+\urlstyle{same}     % font for URLs: Times New Roman
+
+% Allow line breaks with \\ in specialcells
+	\newcommand{\specialcell}[2][c]{%
+	\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+    
+% --- Firmat References (JAR-like) ---
+\usepackage[
+  backend=biber,
+  style=authoryear,
+  dashed=false,        % <-- disables the "—" repeated-author dash
+  giveninits=true,
+  maxbibnames=99,
+  uniquename=false,
+  uniquelist=false,
+  doi=false,
+  isbn=false,
+  url=true,            % allow URLs
+  eprint=false
+]{biblatex}
+
+\addbibresource{References.bib}
+
+% ---------- Match author punctuation: "Last, A.; B. Last; and C. Last."
+\renewcommand*{\multinamedelim}{\addsemicolon\space}
+\renewcommand*{\finalnamedelim}{\addsemicolon\space and\space}
+\renewcommand*{\finalandcomma}{\addcomma}
+
+% ---------- Article title in quotation marks, ending with a period
+\DeclareFieldFormat[article]{title}{\mkbibquote{#1}\addperiod}
+
+% ---------- Journal title italic (default is usually italic, but make explicit)
+\DeclareFieldFormat[article]{journaltitle}{\mkbibemph{#1}}
+
+% ---------- Volume as plain (NOT bold). If you want bold, change to \mkbibbold{#1}
+\DeclareFieldFormat[article]{volume}{#1}
+
+% ---------- Remove language like "en."
+\AtEveryBibitem{\clearlist{language}}
+
+% ---------- Remove month everywhere (so no "Mar. 2022")
+\AtEveryBibitem{\clearfield{month}}
+
+% ---------- Do NOT print issue number
+\AtEveryBibitem{%
+  \ifentrytype{article}{\clearfield{number}}{}%
+}
+
+% ---------- Custom article driver:
+% Anderson, S. B.; J. L. Hobson; and R. D. Sommerfeldt. “Title.” Journal 39 (2022): 577–606.
+\DeclareBibliographyDriver{article}{%
+  \usebibmacro{begentry}%
+  \printnames{author}\addperiod\space
+  \printfield{title}\space
+  \printfield{journaltitle}\space
+  \printfield{volume}\space
+  \printtext{(\printfield{year})}%
+  \setunit{\addcolon\space}%
+  \printfield{pages}%
+  \addperiod
+  \usebibmacro{finentry}%
+}
+
+% ---------- Remove "pp" before pages:
+\DeclareFieldFormat{pages}{#1} 
+
+% ---------- Format URL text
+\DeclareFieldFormat{url}{Available at \url{#1}}
+
+% ---------- Remove "URL:" prefix if present
+\renewbibmacro*{url+urldate}{%
+  \printfield{url}%
+}
+
+% ---------- Remove access date
+\AtEveryBibitem{\clearfield{urldate}}
+
+\usepackage{soul}

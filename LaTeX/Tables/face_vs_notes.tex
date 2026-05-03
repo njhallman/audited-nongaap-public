@@ -1,0 +1,24 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{2}{D{.}{.}{-1}}}
+\\[-1.8ex]\hline \hline \\[-1.8ex]
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}\\
+                    &\multicolumn{1}{c}{\shortstack{\textit{\ONFACE} = 0 \\ DV: \textit{\EXCESSADJ}}}&\multicolumn{1}{c}{\shortstack{\textit{Full Sample} \\ DV: \textit{\EXCESSADJ}}}\\
+\midrule
+\AUDITED             &      -0.242\sym{***}&                     \\
+                    &     (0.034)         &                     \\
+\INNOTES            &                     &      -0.201\sym{***}\\
+                    &                     &     (0.027)         \\
+\ONFACE &                     &      -0.167\sym{***}\\
+                    &                     &     (0.029)         \\
+\MOSTPROM           &       0.157\sym{***}&       0.150\sym{***}\\
+                    &     (0.038)         &     (0.026)         \\
+Constant            &       0.343\sym{***}&       0.366\sym{***}\\
+                    &     (0.022)         &     (0.024)         \\
+\midrule
+Fixed-effects       &         F*Y         &         F*Y         \\
+Observations        &       4,309         &       7,902         \\
+Adjusted R-squared  &       0.342         &       0.436         \\
+\\[-1.8ex]\hline \hline \\[-1.8ex]
+\end{tabular}
+}

@@ -1,0 +1,20 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{2}{D{.}{.}{-1}}}
+\\[-1.8ex]\hline \hline \\[-1.8ex]
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}\\
+                    &\multicolumn{1}{c}{\shortstack{Full Sample \\ DV: \textit{Negative Adj}}}&\multicolumn{1}{c}{\shortstack{\textit{Loss} = 1 \\ DV: \textit{Loss to Profit}}}\\
+\midrule
+\AUDITED             &       0.064\sym{***}&      -0.085\sym{***}\\
+                    &     (0.011)         &     (0.028)         \\
+\MOSTPROM           &      -0.083\sym{***}&       0.115\sym{***}\\
+                    &     (0.009)         &     (0.024)         \\
+Constant            &       0.095\sym{***}&       0.768\sym{***}\\
+                    &     (0.008)         &     (0.022)         \\
+\midrule
+Fixed-effects       &         F*Y         &         F*Y         \\
+Observations        &       7,902         &       1,428         \\
+Adjusted R-squared  &       0.564         &       0.693         \\
+\\[-1.8ex]\hline \hline \\[-1.8ex]
+\end{tabular}
+}

@@ -1,0 +1,15 @@
+__pycache__/
+.DS_Store
+.venv/
+Analysis/Data/
+*.log
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc

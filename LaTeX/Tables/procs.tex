@@ -1,0 +1,51 @@
+\footnotesize
+\textit{Panel B: Criteria-based vs Non-criteria-based Procedures}
+\vspace{4pt}
+
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{1}{D{.}{.}{-1}}}
+\\[-1.8ex]\hline \hline \\[-1.8ex]
+                    &\multicolumn{1}{c}{(1)}\\
+                    &\multicolumn{1}{c}{DV: \textit{\EXCESSADJ}}\\
+\midrule
+\AuditNoBenchGroup&      -0.213\sym{***}\\
+                    &     (0.032)         \\
+\AuditAndBenchGroup&      -0.293\sym{***}\\
+                    &     (0.046)         \\
+\midrule
+Fixed-effects       &       F,A,Y         \\
+Controls            &         Yes         \\
+Observations        &       8,269         \\
+Adjusted R-squared  &       0.414         \\
+p-value for Difference&       0.033         \\
+\\[-1.8ex]\hline \hline \\[-1.8ex]
+\end{tabular}
+}
+
+\vspace{6pt}
+
+\textit{Panel C: Individual Procedures}
+\vspace{4pt}
+
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{6}{D{.}{.}{-1}}}
+\\[-1.8ex]\hline \hline \\[-1.8ex]
+                    &\multicolumn{3}{c}{Non-criteria-based}                           &\multicolumn{3}{c}{Criteria-based}                               \\\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
+                    &\multicolumn{1}{c}{\shortstack{Challenge\\Classif.}}&\multicolumn{1}{c}{\shortstack{Substantive\\Testing}}&\multicolumn{1}{c}{\shortstack{Adequate\\Disclosure}}&\multicolumn{1}{c}{\shortstack{Aligns w/\\Policy}}&\multicolumn{1}{c}{\shortstack{Consistent\\w/ Hist.}}&\multicolumn{1}{c}{\shortstack{Aligns w/\\Standards}}\\
+\midrule
+\AuditNoProc       &      -0.212\sym{***}&      -0.219\sym{***}&      -0.218\sym{***}&      -0.216\sym{***}&      -0.210\sym{***}&      -0.217\sym{***}\\
+                    &     (0.031)         &     (0.031)         &     (0.031)         &     (0.033)         &     (0.032)         &     (0.031)         \\
+\AuditAndProc      &      -0.262\sym{***}&      -0.224\sym{***}&      -0.227\sym{***}&      -0.240\sym{***}&      -0.309\sym{***}&      -0.258\sym{***}\\
+                    &     (0.058)         &     (0.059)         &     (0.063)         &     (0.045)         &     (0.052)         &     (0.073)         \\
+\midrule
+Fixed-effects       &       F,A,Y         &       F,A,Y         &       F,A,Y         &       F,A,Y         &       F,A,Y         &       F,A,Y         \\
+Controls            &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         \\
+Observations        &       8,269         &       8,269         &       8,269         &       8,269         &       8,269         &       8,269         \\
+Adjusted R-squared  &       0.414         &       0.414         &       0.414         &       0.414         &       0.415         &       0.414         \\
+p-value for Difference&       0.285         &       0.909         &       0.869         &       0.538         &       0.018         &       0.503         \\
+\\[-1.8ex]\hline \hline \\[-1.8ex]
+\end{tabular}
+}

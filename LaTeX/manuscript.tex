@@ -1,0 +1,226 @@
+%-----------------------------------%
+%----- Misc. Document Settings -----%
+%-----------------------------------%
+\documentclass[12pt,fleqn]{article}
+
+\usepackage{preamble}
+\usepackage{variables}
+
+\begin{document}
+
+
+
+%----- Sample Design -----%
+\clearpage
+\begin{table}[!htbp] 
+    \begin{threeparttable}[b]
+        \captionsetup{labelfont = bf, singlelinecheck = off, justification = raggedright, labelsep = none}   
+        \caption{\\Sample Design}
+
+        \small
+        \begin{flushleft}
+           {\raggedright
+           \input{Tables/sampleDesign}
+           \par}
+        \end{flushleft}
+        \label{table:Sample}
+
+        \vspace{-6mm}
+        \begin{tablenotes}
+            \scriptsize
+            \item \textbf{Note:} This table describes the screening process used to produce our sample.
+        \end{tablenotes}
+
+    \end{threeparttable}
+\end{table}
+
+%----- Descriptive Stats -----%
+% \clearpage
+\begin{table}[!htbp] 
+    \begin{threeparttable}[b]
+        \captionsetup{labelfont = bf, singlelinecheck = off, justification = raggedright, labelsep = none}   
+        \caption{\\Descriptive Statistics}
+        \small
+
+        \begin{flushleft}        
+        Panel A: Full sample    
+        \end{flushleft}
+        \vspace{-3mm}
+        
+        \begin{flushleft}
+           {\raggedright
+           \input{Tables/descriptive_stats}
+           \label{table:Descriptives}
+           \par}
+        \end{flushleft}
+
+        \vspace{-6mm}
+        \begin{flushleft}        
+        Panel B: Split by Audited    
+        \end{flushleft}
+        \vspace{-3mm}
+        
+        \begin{flushleft}
+           {\raggedright
+           \input{Tables/descriptive_stats_by_audit}
+           \label{table:Descriptives_by_audit}
+           \par}
+        \end{flushleft}
+
+        \vspace{-6mm}
+        \begin{tablenotes}
+            \scriptsize
+            \item \textbf{Note:} Panel A reports descriptive statistics for the full sample. Panel B reports descriptive statistics for selected key variables in subsamples split based on whether the non-GAAP measure is audited. *, **, and *** indicate p-values < .10, < .05, and < .01, respectively. Variable definitions are provided in Appendix A.
+        \end{tablenotes}
+    
+    \end{threeparttable}
+\end{table}
+
+
+
+%----- Primary Hyp Test -----%
+\clearpage
+\begin{landscape}
+\begin{table}[!htbp] 
+    \begin{threeparttable}[b]
+        \captionsetup{labelfont = bf, singlelinecheck = off, justification = raggedright, labelsep = none}   
+        \caption{\\Are Audited Non-GAAP Adjustments Less Aggressive?}
+        \centering
+        \footnotesize
+
+        \begin{flushleft}
+           {\raggedright
+           \input{Tables/excess_adj_full_sample}
+           \par}
+        \end{flushleft}
+
+        \vspace{-6 mm}        
+        \begin{tablenotes}
+            \scriptsize
+            \item Note: This table tests whether \textit{Mgmt. Excess Adj.} are smaller when the non-GAAP earnings are audited. We use OLS to estimate all the models. Column (1) includes no control variables or fixed effects. Column (2) adds firm-year–level and firm-year–measure–level control variables. Column (3) includes audit firm and year fixed effects. Column (4) includes client firm, audit firm, and year fixed effects. Column (5) includes client firm-by-year fixed effects and excludes firm-year–level controls because they do not vary within a given firm-year. All five columns use all firm-year–measures in the sample. The sample size in Column (4) decreases by 18, because those firms have only one-year observation in the sample. The sample size in Column (5) decreases by 385, because those firm-years have only one non-GAAP earnings measure. Standard errors are clustered at the firm-level. *, **, and *** indicate p-values of \textless\, .10, \textless\, .05, and \textless\, .01 respectively. Variable definitions are provided in Appendix A.
+        \end{tablenotes}
+        \label{table:street}
+
+    \end{threeparttable}
+\end{table}
+\end{landscape}
+
+
+%----- Alternative DVs -----%
+\clearpage
+\begin{table}[!htbp] 
+    \begin{threeparttable}[b]
+        \captionsetup{labelfont = bf, singlelinecheck = off, justification = raggedright, labelsep = none}   
+        \caption{\\Alternative Dependent Variables}
+        \small
+
+        \begin{flushleft}
+           {\raggedright
+           \input{Tables/alternative_dvs}
+           \par}
+        \end{flushleft}
+
+        \vspace{-6 mm}
+        
+        \begin{tablenotes}
+            \scriptsize
+            \item \textbf{Note:} Column (1) tests whether the non-GAAP adjustments are more likely to be negative when the non-GAAP measure is audited. Column (2) tests whether the audited non-GAAP adjustments are less likely to convert a GAAP loss to a profit than the unaudited ones. Column (1) uses all firm-year-measures in the sample, except for the firm-years with only one non-GAAP earnings measure. Column (2) restricts the sample to the firm-years that report negative GAAP earnings. Both columns include client firm-by-year fixed effects. Standard errors are clustered at the firm-level. *, **, and *** indicate p-values of \textless\, .10, \textless\, .05, and \textless\, .01 respectively. Variable definitions are provided in Appendix A.
+        \end{tablenotes}
+        \label{table:negadj}
+    \end{threeparttable}
+\end{table}
+
+%----- Face versus Notes -----%
+\clearpage
+% \begin{landscape}
+\begin{table}[!htbp] 
+    \begin{threeparttable}[b]
+        \captionsetup{labelfont = bf, singlelinecheck = off, justification = raggedright, labelsep = none}   
+        \caption{\\Face versus Notes}
+        \small
+
+        \begin{flushleft}
+           {\raggedright
+           \input{Tables/face_vs_notes}
+           \par}
+        \end{flushleft}
+
+        \vspace{-6mm}
+        \begin{tablenotes}
+            \scriptsize
+            \item \textbf{Note:}  This table tests whether \textit{Mgmt. Excess Adj.} are smaller when the non-GAAP earnings are audited. Column (1) restricts the sample to the firm-year-measures that only appear in the MD\&A section of the annual report, or appear in both the MD\&A and the financial statements footnotes. Column (2) uses all firm-year-measures in the sample, except for the firm-years with only one non-GAAP earnings measure. Both columns include client firm-by-year fixed effects. Standard errors are clustered at the firm-level. *, **, and *** indicate p-values of \textless\, .10, \textless\, .05, and \textless\, .01 respectively. Variable definitions are provided in Appendix A.
+        \end{tablenotes}
+        \label{table:facevnootes}
+    \end{threeparttable}
+\end{table}
+% \end{landscape}
+
+%----- Specific Procedures: Panel A (portrait) -----%
+\clearpage
+\begin{table}[!htbp]
+    \begin{threeparttable}[b]
+        \captionsetup{labelfont = bf, singlelinecheck = off, justification = raggedright, labelsep = none}
+        \caption{\\Specific Audit Procedures}
+        \label{table:procs}
+
+        \footnotesize
+        \begin{flushleft}
+           {\raggedright
+           \input{Tables/procs_panelA}
+           \par}
+        \end{flushleft}
+
+    \end{threeparttable}
+\end{table}
+
+%----- Specific Procedures: Panels B+C (landscape) -----%
+\clearpage
+\begin{landscape}
+\begin{table}[!htbp]
+    \addtocounter{table}{-1}
+    \begin{threeparttable}[b]
+        \captionsetup{labelfont = bf, singlelinecheck = off, justification = raggedright, labelsep = none}
+        \caption{\\Specific Audit Procedures (continued)}
+
+        \footnotesize
+        \begin{flushleft}
+           {\raggedright
+           \input{Tables/procs}
+           \par}
+        \end{flushleft}
+        \vspace{-6mm}
+
+        \begin{tablenotes}
+            \scriptsize
+            \vspace{3mm}
+            \item \textbf{Note:} This table reports results from OLS regressions of \textit{Mgmt. Excess Adj.} on audit procedure indicators. Panel A describes each procedure and its frequency. Panel B partitions audited observations into criteria-based (\textit{Ensure Aligns w/ Policy}, \textit{Ensure Consistent w/ Hist.}, and \textit{Ensure Aligns w/ Standards}) versus non-criteria-based (\textit{Challenge Classification}, \textit{Substantive Testing}, and \textit{Ensure Adequate Disclosure}) procedure groups using indicators based on procedure counts, with ties activating both. Panel C reports separate regressions for each individual procedure. All regressions include firm, auditor, and year fixed effects and the full set of control variables. Standard errors are clustered by firm and reported in parentheses. *, **, and *** denote significance at the 10\%, 5\%, and 1\% levels, respectively.
+        \end{tablenotes}
+
+    \end{threeparttable}
+\end{table}
+\end{landscape}
+
+%----- Value Relevance -----%
+\clearpage
+\begin{table}[!htbp] 
+    \begin{threeparttable}[b]
+        \captionsetup{labelfont = bf, singlelinecheck = off, justification = raggedright, labelsep = none}   
+        \caption{\\Are Audited Non-GAAP Earnings More Value Relevant?}
+        \small
+
+        \begin{flushleft}
+           {\raggedright
+           \input{Tables/value_rel}
+           \par}
+        \end{flushleft}
+        \vspace{-6mm}
+        
+        \begin{tablenotes}
+            \scriptsize
+            \item \textbf{Note:} This table examines the value relevance of the non-GAAP adjustments. Column (1) does not include any variables capturing the audited status of the non-GAAP earnings measure. Column (2) includes both the \textit{Audited} variable and its interaction with \textit{Mgmt. Excess Adj.} Both columns use all firm-year-measures, except for the firms that have only one-year observation in the sample. Both columns include client firm, audit firm, and year fixed effects. Robust standard errors are clustered at the firm-level. *, **, and *** indicate p-values of \textless\, .10, \textless\, .05, and \textless\, .01 respectively. Variable definitions are provided in Appendix A.
+        \end{tablenotes}
+        \label{table:valrel}
+    \end{threeparttable}
+\end{table}
+
+\end{document}
